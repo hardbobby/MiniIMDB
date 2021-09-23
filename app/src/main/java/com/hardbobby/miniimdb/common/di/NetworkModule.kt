@@ -1,5 +1,6 @@
 package com.hardbobby.miniimdb.common.di
 
+import com.hardbobby.data.common.Keys
 import com.hardbobby.data.remote.MovieAPI
 import com.hardbobby.miniimdb.common.service.interceptor.ApiKeyInterceptor
 import dagger.Module
@@ -40,7 +41,7 @@ object NetworkModule {
     @Provides
     fun providesRetrofitBuilder(okHttpClient: OkHttpClient): Retrofit.Builder {
         return Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
+            .baseUrl(Keys.baseUrl())
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
     }
@@ -48,7 +49,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun providesApiKeyInterceptor(): Interceptor {
-        return ApiKeyInterceptor("Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmZTY1YjhhNWNhOWFjMTNmYTQyMjkxNmQ5NWE5YzM5ZCIsInN1YiI6IjVlOTdkZjY5MTlhYjU5MDAxNDQ2Y2E0YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FSvpipQB-aB8py7fCwpANX91vqVvnMIRG5Bm9h-5sCs")
+        return ApiKeyInterceptor(Keys.apiKey())
     }
 
 

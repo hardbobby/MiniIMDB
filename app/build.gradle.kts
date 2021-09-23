@@ -1,3 +1,5 @@
+import Version.ndkVersion
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -28,6 +30,12 @@ android {
             proguardFiles("proguard-android-optimize.txt", "proguard-rules.pro")
         }
     }
+
+    externalNativeBuild {
+        cmake {
+            path ("CMakeLists.txt")
+        }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -35,6 +43,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    ndkVersion =   Version.ndkVersion
+
 }
 
 dependencies {
