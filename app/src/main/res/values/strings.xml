@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MiniIMDB</string>
+
+    <string name="label_no_available_information">Tidak ada data yang ditampilkan</string>
+    <string name="label_load_more">Lainnya</string>
+    <string name="label_overview">Overview</string>
+    <string name="label_cast">The Cast</string>
+
+    <string name="count_favorite_movie_tmpl">Favorite Movie : %s Movies</string>
+
+
+
+
+</resources>
